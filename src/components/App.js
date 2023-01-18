@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import AdminNavBar from "./AdminNavBar";
-import QuestionForm from "./QuestionForm";
+import QuizForm from "./QuizForm";
 import QuestionList from "./QuestionList";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
   return (
     <main>
       <AdminNavBar onChangePage={setPage} />
-      {page === "Form" ? <QuestionForm /> : <QuestionList />}
+      {page === "Form" ? <QuizForm /> : <QuestionList />}
     </main>
   );
 }

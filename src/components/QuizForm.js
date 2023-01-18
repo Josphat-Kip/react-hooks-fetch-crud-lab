@@ -1,12 +1,12 @@
 import React, { useState} from "react";
 
-function QuestionForm(props) {
+function QuizForm(props) {
   const [formData, setFormData] = useState({
     prompt: "",
-    answer1: "",
-    answer2: "",
-    answer3: "",
-    answer4: "",
+    ans1: "",
+    ans2: "",
+    ans3: "",
+    ans4: "",
     correctIndex: 0,
   });
   
@@ -27,10 +27,10 @@ function QuestionForm(props) {
       body : JSON.stringify(
       {
         "prompt" : formData.prompt,
-        "answers" : [formData.answer1,
-          formData.answer2,
-          formData.answer3,
-          formData.answer4,
+        "answers" : [formData.ans1,
+          formData.ans2,
+          formData.ans3,
+          formData.ans4,
         ],
         "correctIndex" : formData.correctIndex
       })
@@ -40,7 +40,7 @@ function QuestionForm(props) {
   }
   return (
     <section>
-      <h1>New Question</h1>
+      <h1>New Quiz</h1>
       <form onSubmit={handleSubmit}>
         <label>
           Prompt:
@@ -55,8 +55,8 @@ function QuestionForm(props) {
           Answer 1:
           <input
             type="text"
-            name="answer1"
-            value={formData.answer1}
+            name="ans1"
+            value={formData.ans1}
             onChange={handleChange}
           />
         </label>
@@ -64,46 +64,46 @@ function QuestionForm(props) {
           Answer 2:
           <input
             type="text"
-            name="answer2"
-            value={formData.answer2}
+            name="ans2"
+            value={formData.ans2}
             onChange={handleChange}
           />
         </label>
         <label>
-          Answer 3:
+          Ans 3:
           <input
             type="text"
-            name="answer3"
-            value={formData.answer3}
+            name="ans3"
+            value={formData.ans3}
             onChange={handleChange}
           />
         </label>
         <label>
-          Answer 4:
+          Ans 4:
           <input
             type="text"
-            name="answer4"
-            value={formData.answer4}
+            name="ans"
+            value={formData.ans4}
             onChange={handleChange}
           />
         </label>
         <label>
-          Correct Answer:
+          Correct Ans:
           <select
             name="correctIndex"
             value={formData.correctIndex}
             onChange={handleChange}
           >
-            <option value="0">{formData.answer1}</option>
-            <option value="1">{formData.answer2}</option>
-            <option value="2">{formData.answer3}</option>
-            <option value="3">{formData.answer4}</option>
+            <option value="0">{formData.ans1}</option>
+            <option value="1">{formData.ans2}</option>
+            <option value="2">{formData.ans3}</option>
+            <option value="3">{formData.ans4}</option>
           </select>
         </label>
-        <button type="submit">Add Question</button>
+        <button type="submit">Add Quiz</button>
       </form>
     </section>
   );
 }
 
-export default QuestionForm;
+export default QuizForm;
